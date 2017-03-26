@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ "$(id -u)" != "0" ]
+then
+	sudo xamarin-android-uninstall
+	exit
+fi
+
+rm -rf /opt/mono-android
+rm -rf /usr/lib/mono/xbuild/Xamarin/
+rm -rf /usr/lib/mono/xbuild-frameworks/MonoAndroid/
+rm /usr/bin/xamarin-android-uninstall
