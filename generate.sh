@@ -4,25 +4,22 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-if [ ! -f ../XAL.zip ]
-then
-	echo "Downloading Xamarin.Android from:"
-	echo "https://jenkins.mono-project.com/view/Xamarin.Android/job/xamarin-android-linux/lastSuccessfulBuild/Azure/"
-	echo "and place the file in the current directory with the name 'XAL.zip'"
-	cd ..
-	exit
-fi
+echo "Downloading Xamarin.Android..."
+DATA=$(curl https://jenkins.mono-project.com/view/Xamarin.Android/job/xamarin-android-linux/lastSuccessfulBuild/Azure/)
+START="processDownloadRequest/xamarin-android/oss"
+IFS='"' read -ra ARR <<< "${DATA#*$START}"
+URL="https://jenkins.mono-project.com/view/Xamarin.Android/job/xamarin-android-linux/lastSuccessfulBuild/Azure/processDownloadRequest/xamarin-android/oss${ARR[0]}"
+wget -O XAL.zip $URL
 
 echo "Extracting Xamarin.Android..."
-unzip ../XAL.zip -d XAL
+unzip XAL.zip -d XAL
+rm XAL.zip
 
 echo "Copying installer data..."
-cp -rf XAL/*/bin/Release/ mono-android/
-cp -rf ../src/. .
-
+mv XAL/*/bin/Release/ mono-android/
 rm -rf XAL
+cp -rf ../src/. .
 cd ..
-rm XAL.zip
 
 echo "Building the installer..."
 rm -rf bin
