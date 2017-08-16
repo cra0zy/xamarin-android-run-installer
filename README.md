@@ -1,7 +1,7 @@
-# Xamarin Androind installer for Linux
+# Xamarin Android installer for Linux
 A simple .run Linux installer for Xamarin.Android
 
-This only installas Xamarin.Android binary to your system, this does not include the Xamarin.Android addon for MonoDevelop or anything similar to that. To install it simply run:
+This only installs Xamarin.Android compiler to your system, this does not include the Xamarin.Android addon for MonoDevelop or anything similar to that. To install it simply do:
 ```sh
 git clone https://github.com/cra0zy/xamarin-android-run-installer.git
 ./generate.sh
@@ -28,7 +28,7 @@ If you want to skip having to specify Android SDK/NDK each time you compile simp
 
 ### Get visual studio code to autocomplete
 
-Visual studio code comes with it's own msbuild, so we need to add a symlink to it's msbuild dir. Simply do:
+Visual studio code comes with it's own msbuild, so we need to add a symlink to its msbuild dir. Simply do:
 ```sh
 ln -s "/usr/lib/mono/xbuild/Xamarin" "$PathToYourOmnisharpExtension/bin/omnisharp/msbuild/Xamarin"
 ln -s "/usr/lib/mono/xbuild/Novell" "$PathToYourOmnisharpExtension/bin/omnisharp/msbuild/Xamarin"
