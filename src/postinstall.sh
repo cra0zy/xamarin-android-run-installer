@@ -14,8 +14,9 @@ fi
 
 echo "Copying Xamarin.Android binaries..."
 cp -rf mono-android/ /opt/mono-android/
-ln -s /opt/mono-android/lib/xbuild/Xamarin/ /usr/lib/mono/xbuild/Xamarin
-ln -s /opt/mono-android/lib/xbuild-frameworks/MonoAndroid/ /usr/lib/mono/xbuild-frameworks/MonoAndroid
+ln -s /opt/mono-android/lib/xamarin.android/xbuild/Xamarin/ /usr/lib/mono/xbuild/Xamarin
+ln -s /opt/mono-android/lib/xamarin.android/xbuild/Novell/ /usr/lib/mono/xbuild/Novell
+ln -s /opt/mono-android/lib/xamarin.android/xbuild-frameworks/MonoAndroid/ /usr/lib/mono/xbuild-frameworks/MonoAndroid
 
 echo "Adding terminal commands..."
 cp xamarin-android-uninstall /usr/bin/xamarin-android-uninstall

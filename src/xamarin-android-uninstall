@@ -8,5 +8,6 @@ fi
 
 rm -rf /opt/mono-android
 rm -rf /usr/lib/mono/xbuild/Xamarin
+rm -rf /usr/lib/mono/xbuild/Novell
 rm -rf /usr/lib/mono/xbuild-frameworks/MonoAndroid
 rm /usr/bin/xamarin-android-uninstall
