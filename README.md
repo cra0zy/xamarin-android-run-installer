@@ -25,11 +25,3 @@ If you want to skip having to specify Android SDK/NDK each time you compile simp
 	<!-- java-sdk path="" -->
 </monodroid>
 ```
-
-### Get visual studio code to autocomplete
-
-Visual studio code comes with it's own msbuild, so we need to add a symlink to its msbuild dir. Simply do:
-```sh
-ln -s "/usr/lib/mono/xbuild/Xamarin" "$PathToYourOmnisharpExtension/bin/omnisharp/msbuild/Xamarin"
-ln -s "/usr/lib/mono/xbuild/Novell" "$PathToYourOmnisharpExtension/bin/omnisharp/msbuild/Xamarin"
-```
